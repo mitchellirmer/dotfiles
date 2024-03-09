@@ -1,0 +1,36 @@
+ 
+## CLI STUFF
+alias web='w3m https://www.duckduckgo.com -config $HOME/.w3m/config'
+alias linklist='lynx -dump -listonly -nonumbers'
+alias websave='lynx -dump -nolist'
+
+## emacs org mode helper scripts
+alias syncorgdb='sh $HOME/Documents/Org/helperScripts/syncorgdb.sh'
+alias resyncorgdb='sh $HOME/Documents/Org/helperScripts/syncorgdb.sh'
+
+####### CLISUITE INSTALLATION BELOW
+alias metube='sh $HOME/.clisuite/src/metube.sh'
+alias readmode='sh $HOME/.clisuite/src/readmode.sh'
+alias speckify='sh $HOME/.clisuite/src/speckify.sh'
+####### END CLISUITE INSTALLATION
+
+## work these next two into speckify
+alias mpa='mpv --no-video'
+alias mpash='mpv --no-video --shuffle'
+##
+alias weather='cd /home/mitchell/Opt/weather-2.4; ./weather --forecast mry; cd'
+
+## if I wrote the script this will tell me what it does.
+alias reminder='grep ":=" *.sh'
+
+## This next section is also on Minte's macbook -- update hers if I update these
+alias manamana="mpv 'https://www.youtube.com/watch?v=9ytei6bu7kQ&pp=ygULbWFobmE$'"
+alias popcorn="mpv 'https://www.youtube.com/watch?v=B7UmUX68KtE&pp=ygUUcG9wY29y$'"
+alias lpr='mpv --no-video https://lpr.streamguys1.com/lpr-aac'
+alias cows="mpv 'https://www.youtube.com/watch?v=Z1f9b7sX_XY&pp=ygUTY293cyBzYW5$'"
+alias trex="mpv 'https://www.youtube.com/watch?v=y1nBhDVuTR0&pp=ygUTdHJleCBzYW5$'"
+alias chickens="mpv 'https://www.youtube.com/watch?v=0Pm9_M-94XY&pp=ygUVcGhpbGF$'"
+alias piggies="mpv 'https://www.youtube.com/watch?v=6x0aUhUJDBE&pp=ygUPcGVyZmVj$'"
+alias vidshuffle='mpv --shuffle .vidshuffle.m3u'
+alias mitch='sh /home/mitchell/Videos/.mitch.txt'
+##

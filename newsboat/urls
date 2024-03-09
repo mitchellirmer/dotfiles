@@ -1,0 +1,43 @@
+https://babylonbee.com/feed
+
+https://notthebee.com/feed
+https://thefederalist.com/feed/
+
+"query:NEWSMAX:tags # \"NEWSMAX\""
+https://www.newsmax.com/rss/Economy/2 NEWSMAX !
+https://www.newsmax.com/rss/InvestingAnalysis/17  NEWSMAX !
+https://www.newsmax.com/rss/US/18 NEWSMAX !
+
+"query:Daily\ Caller:tags # \"Daily_Caller\""
+https://feeds.feedburner.com/dailycaller-us Daily_Caller !
+https://feeds.feedburner.com/dailycaller-world Daily_Caller !
+https://feeds.feedburner.com/dailycaller-business Daily_Caller !
+https://feeds.feedburner.com/dailycaller-opinion Daily_Caller !
+
+"query:Christian\ Content:tags # \"Christian\""
+https://issuesetc.org/feed/ Christian !
+https://feeds.libsyn.com/39484/rss Christian !
+
+"query:BBC:tags # \"BBC\""
+https://feeds.bbci.co.uk/news/world/rss.xml BBC !
+https://feeds.bbci.co.uk/news/world/latin_america/rss.xml BBC !
+
+"query:Huskers:tags # \"Huskers\""
+http://www.journalstar.com/search/?f=rss&t=article&c=sports/huskers*&l=25&s=start_time&sd=desc&_gl=1*164hseo*_ga*MTI5NTI3NjkxNS4xNzA0NzM4NjAw*_ga_515RQFH8CN*MTcwNDczODYwMC4xLjAuMTcwNDczODYwMC42MC4wLjA. Huskers !
+https://www.youtube.com/feeds/videos.xml?channel_id=UCMqWeJDl7yjblwPKVNo4XfA Huskers !
+
+"query:People:tags # \"People\""
+https://www.youtube.com/feeds/videos.xml?channel_id=UCL_f53ZEJxp8TtlOkHwMV9Q People !
+https://www.youtube.com/feeds/videos.xml?channel_id=UCautFW0hm0QPVXFVeSpSpxg People !
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4ewc5vQcMpLticvqPDcSQw People !
+
+"query:Hobby\ Videos:tags # \"Hobby\""
+https://www.youtube.com/feeds/videos.xml?channel_id=UCMiyV_Ib77XLpzHPQH_q0qQ Hobby !
+https://www.youtube.com/feeds/videos.xml?channel_id=UCfpCQ89W9wjkHc8J_6eTbBg Hobby !
+https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA Hobby !
+https://www.youtube.com/feeds/videos.xml?channel_id=UCixD9UbKvDxzGNiPC_fgHyA Hobby !
+
+https://www.youtube.com/feeds/videos.xml?channel_id=UCzJXNzqz6VMHSNInQt_7q6w  # Megyn Kelly 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCGttrUON87gWfU6dMWm1fcA  # Tucker Carlson
+https://www.youtube.com/feeds/videos.xml?channel_id=UCL_f53ZEJxp8TtlOkHwMV9Q  # Jordan Peterson
+https://www.youtube.com/feeds/videos.xml?channel_id=UCO01ytfzgXYy4glnPJm4PPQ  # Matt Walsh
