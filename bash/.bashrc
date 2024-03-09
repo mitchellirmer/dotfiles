@@ -144,7 +144,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias ohmybash="mate ~/.oh-my-bash"
 
 # aliases
-export "/$USER/Dev/dotfiles/bash/.aliases"
+. /$HOME/Dev/dotfiles/bash/.aliases
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
