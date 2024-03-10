@@ -130,7 +130,9 @@ source "$OSH"/oh-my-bash.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
+##################################################################
+##################################################################
+##################################################################
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
@@ -160,3 +162,19 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+## GPG STUFF
+export GPG_TTY=$(tty)
+
+## HOMEBREW STUFF
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+##
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/mitchell/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<

@@ -5,7 +5,7 @@ browser "w3m -config /home/mitchell/.w3m/config %u"
 macro v set browser "ts mpv %u" ; open-in-browser ; set browser "w3m -config /home/mitchell/.w3m/config  %u"
 macro a set browser "ts mpv --no-video %u" ; open-in-browser ; set browser "w3m -config /home/mitchell/.w3m/config  %u"
 macro q set browser "ts qutebrowser %u" ; open-in-browser ; set browser "w3m -config /home/mitchell/.w3m/config  %u"
-macro r set browser "sh $HOME/.clisuite/readmode/readmode.sh" ; open-in-browser ; set browser "w3m -config /home/mitchell/.w3m/config %u"
+macro r set browser "sh $HOME/.clisuite/src/readmode.sh" ; open-in-browser ; set browser "w3m -config /home/mitchell/.w3m/config %u"
 
 ## feeds
 auto-reload yes
