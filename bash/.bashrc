@@ -147,6 +147,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # aliases
 . /$HOME/Dev/dotfiles/bash/.aliases
+. /$HOME/.clisuite/src/config
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

@@ -8,12 +8,6 @@ alias websave='lynx -dump -nolist'
 alias syncorgdb='sh $HOME/Documents/Org/helperScripts/syncorgdb.sh'
 alias resyncorgdb='sh $HOME/Documents/Org/helperScripts/syncorgdb.sh'
 
-####### CLISUITE INSTALLATION BELOW
-alias metube='sh $HOME/.clisuite/src/metube.sh'
-alias readmode='sh $HOME/.clisuite/src/readmode.sh'
-alias speckify='sh $HOME/.clisuite/src/speckify.sh'
-####### END CLISUITE INSTALLATION
-
 ## work these next two into speckify
 alias mpa='mpv --no-video'
 alias mpash='mpv --no-video --shuffle'

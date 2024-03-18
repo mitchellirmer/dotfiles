@@ -44,7 +44,7 @@ icon_branch=""
 icon_git="   "
 icon_end="└❯ "
 icon_clock=" "
-icon_arrow=" "
+icon_arrow=" "
 
 # extra spaces ensure legiblity in prompt
 
@@ -64,7 +64,7 @@ function winname {
 
 # Displays the current prompt
 function _omb_theme_PROMPT_COMMAND() {
-  PS1="${icon_start}${_omb_prompt_teal}${icon_user}|${_omb_prompt_olive}$(_omb_prompt_print_python_venv)${_omb_prompt_purple}\$([[ -n \$(_omb_prompt_git branch 2> /dev/null) ]] && echo \"${icon_git}${icon_branch}  \")${_omb_prompt_white}$(scm_prompt_info) ${_omb_prompt_teal}| ${_omb_prompt_bold_blue}${icon_directory}${_omb_prompt_teal}| ${icon_arrow}${_omb_prompt_normal}\n${icon_end}"
+  PS1="${icon_start}${_omb_prompt_teal}${icon_user}[${_omb_prompt_olive}$(_omb_prompt_print_python_venv)${_omb_prompt_purple}\$([[ -n \$(_omb_prompt_git branch 2> /dev/null) ]] && echo \"${icon_git}${icon_branch}  \")${_omb_prompt_white}$(scm_prompt_info) ${_omb_prompt_teal}][ ${_omb_prompt_bold_blue}${icon_directory}${_omb_prompt_teal}] ${icon_arrow}${_omb_prompt_normal}\n${icon_end}"
   PS2="${icon_end}"
 }
 

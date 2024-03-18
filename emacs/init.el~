@@ -2,13 +2,9 @@
 ;; ON STARTUP
 ;;;;;;;;;;;;;
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/")
-
-(find-file "/home/mitchell/Documents/Org/calendar.org")
-(split-window-right)
 (find-file "/home/mitchell/Documents/Org/")
-;(set-frame-parameter nil 'alpha-background 98)
-;(add-to-list 'default-frame-alist '(alpha-background . 98))
+(set-frame-parameter nil 'alpha-background 98)
+(add-to-list 'default-frame-alist '(alpha-background . 98))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; SYSTEM CRAFTERS with slight tweaks
@@ -108,16 +104,6 @@
 
 (setq org-agenda-include-diary t)
 
-(setq org-todo-keyword-faces
-      '(
-        ("CAL" :foreground "blue" :weight bold)
-        ("WORKING" :foreground "yellow" :weight bold)
-        )
-      )
-
-(setq org-todo-keywords
-      '((sequence "TODO" "CAL" "WORKING" "DONE")))
-
 ;; does this even work ;;;;;;;;;;;;;;;;;;;; 
 ;; Org minted sytax highlighting
 (setq org-latex-listings 'minted
@@ -189,14 +175,6 @@ background of code to whatever theme I'm using's background"
 ;(require 'eaf-terminal)
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Layout Restore ;;;;;;;;;
-;; https://www.emacswiki.org/emacs/LayoutRestorex
-;(require 'layout-restore)
-;    (global-set-key [?\C-c ?l] 'layout-save-current)
-;    (global-set-key [?\C-c ?\C-l ?\C-l] 'layout-restore)
-;    (global-set-key [?\C-c ?\C-l ?\C-c] 'layout-delete-current)
-
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -208,7 +186,7 @@ background of code to whatever theme I'm using's background"
  '(delete-selection-mode nil)
  '(ielm-prompt "λ ")
  '(org-agenda-files
-   '("~/Documents/Org/calendar.org" "/home/mitchell/Documents/Org/MyLife.org" "/home/mitchell/Documents/Org/thesis.org"))
+   '("~/Documents/Org/FamilyStuff.org" "/home/mitchell/Documents/Org/PCStoVA.org" "/home/mitchell/Documents/Org/thesis.org"))
  '(package-selected-packages
    '(julia-repl color-theme-sanityinc-tomorrow github-modern-theme kaolin-themes swiper ob-julia-vterm ob-ess-julia nordic-night-theme matlab-mode htmlize doom-modeline command-log-mode)))
 (custom-set-faces
