@@ -1,3 +1,4 @@
+
 #! bash oh-my-bash.module
 
 #################################################
@@ -37,14 +38,15 @@ GIT_THEME_PROMPT_SUFFIX=""
 
 icon_start="┌"
 icon_venv=" "
-icon_user="   "
+icon_user="  "
 icon_host="@ "
 icon_directory="  \w "
 icon_branch=""
 icon_git="   "
 icon_end="└❯ "
 icon_clock=" "
-icon_arrow=" "
+icon_arrow=" > "
+# extras: 
 
 # extra spaces ensure legiblity in prompt
 

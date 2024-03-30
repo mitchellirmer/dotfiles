@@ -2,11 +2,20 @@
 ;; ON STARTUP
 ;;;;;;;;;;;;;
 
+;; Point to locally saved packages
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
 
-(find-file "/home/mitchell/Documents/Org/calendar.org")
-(split-window-right)
-(find-file "/home/mitchell/Documents/Org/")
+;; custom startup function
+(defun my-startup ()
+  (interactive)
+  (find-file "/home/mitchell/Documents/Org/calendar.org")
+  ;(split-window-right)
+  ;(org-agenda)
+  )
+(my-startup)
+
+;; set opacity stuff
+; comment out if window manager handles it
 ;(set-frame-parameter nil 'alpha-background 98)
 ;(add-to-list 'default-frame-alist '(alpha-background . 98))
 
@@ -28,8 +37,9 @@
 ;; soft wrap lines
 (add-hook 'text-mode-hook 'visual-line-mode)
 
-(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 120)
+(set-face-attribute 'default nil :font "CodeNewRoman Nerd Font" :height 140)
 
+;; choose font here
 ;(load-theme 'color-theme-sanityinc-tomorrow-day t)
 
 ;; Make ESC quit prompts
@@ -91,14 +101,16 @@
 ;;;;;;;;;;;
 
 (keymap-global-set "C-q" 'vterm-send-next-key)
-(use-package org :ensure t)
-(setq org-agenda-files (quote("/home/mitchell/Org")))
 
 ;;;;;;;;;;;;
 ;; ORG STUFF
 ;;;;;;;;;;;;
 
+(use-package wc-mode :ensure t)
+(use-package org :ensure t)
+(setq org-agenda-files (quote("/home/mitchell/Org")))
 (use-package htmlize :ensure t)
+
 ;(add-hook 'htmlize-buffer)
 
 ;; Keybindings
@@ -110,22 +122,26 @@
 
 (setq org-todo-keyword-faces
       '(
+        ("TODO" :foreground "red" :weight bold)
         ("CAL" :foreground "blue" :weight bold)
-        ("WORKING" :foreground "yellow" :weight bold)
+	("WORKING" :foreground "yellow" :weight bold)
+        ("DONE" :foreground "green" :weight bold)
         )
       )
 
 (setq org-todo-keywords
       '((sequence "TODO" "CAL" "WORKING" "DONE")))
 
-;; does this even work ;;;;;;;;;;;;;;;;;;;; 
+;; does this even work
+;; copied from somewhere on stackexchange
+;;
 ;; Org minted sytax highlighting
 (setq org-latex-listings 'minted
       org-latex-packages-alist '(("" "minted"))
       org-latex-pdf-process
       '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
         "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
 
 
 ;;;;;;;;;;;;;;;;;;
@@ -140,12 +156,6 @@
 ;(use-package julia-vterm :ensure t)
 ;(use-package ob-julia-vterm :ensure t)
 
-;;;;;;;;;;;;;;;;;;
-;; MATLAB IDE STUFF
-;;;;;;;;;;;;;;;;;;
-;(use-package matlab-mode :ensure t)
-
-
 ;; babel stuff
 (setq org-confirm-babel-evaluate nil)
 (setq org-src-preserve-indentation t)
@@ -153,15 +163,14 @@
  'org-babel-load-languages
  '(
    (julia . t)
-;   (julia-vterm . t)
    (octave . t)
    (C . t)
    (shell . t)
    )
  )
 
-;; Export helper from here: https://emacs.stackexchange.com/questions/3374/set-the-background-of-org-exported-code-blocks-according-to-theme
-
+;; Export helper from here:
+;; https://emacs.stackexchange.com/questions/3374/set-the-background-of-org-exported-code-blocks-according-to-theme
 (defun my/org-inline-css-hook (exporter)
   "Insert custom inline css to automatically set the
 background of code to whatever theme I'm using's background"
@@ -196,6 +205,61 @@ background of code to whatever theme I'm using's background"
 ;    (global-set-key [?\C-c ?\C-l ?\C-l] 'layout-restore)
 ;    (global-set-key [?\C-c ?\C-l ?\C-c] 'layout-delete-current)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; CUSTOM FUNCTIONS ;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun juliet ()
+  (interactive)
+  (delete-other-windows)
+  (switch-to-buffer (find-file-noselect "~/Dev/JuliaProjects/New/new.jl"))
+  (julia-mode)
+  (julia-vterm-mode)
+  (julia-vterm-repl)
+  (split-window-below)
+  (switch-to-buffer (find-file-noselect "~/Dev/JuliaProjects/New/new.jl"))
+)
+
+
+;; begin copied directly from
+; https://fedoramagazine.org/emacs-for-writers/
+(defun my-set-margins ()
+  "Set margins in current buffer."
+  (setq left-margin-width 5) 
+  (setq right-margin-width 5)
+)
+
+(add-hook 'text-mode-hook 'my-set-margins)
+
+(defun my-toggle-margins ()
+  "Set margins in current buffer."
+  (interactive)
+  (if (or (> left-margin-width 0) (> right-margin-width 0))
+      (progn
+	(setq left-margin-width 0)
+	(setq right-margin-width 0)
+	(set-window-buffer (selected-window) (current-buffer))
+	)
+    (setq left-margin-width 5)
+    (setq right-margin-width 5)
+    (set-window-buffer (selected-window) (current-buffer))
+    )
+  )
+
+(global-set-key [f5] 'my-toggle-margins)
+;; end copied directly
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; BIG HOOKS ;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-hook 'text-mode-hook
+	  (lambda ()
+	    (flyspell-mode)
+	    (wc-mode)
+	    )
+	  )
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -210,10 +274,28 @@ background of code to whatever theme I'm using's background"
  '(org-agenda-files
    '("~/Documents/Org/calendar.org" "/home/mitchell/Documents/Org/MyLife.org" "/home/mitchell/Documents/Org/thesis.org"))
  '(package-selected-packages
-   '(julia-repl color-theme-sanityinc-tomorrow github-modern-theme kaolin-themes swiper ob-julia-vterm ob-ess-julia nordic-night-theme matlab-mode htmlize doom-modeline command-log-mode)))
+   '(exwm-config exwm wc-mode julia-repl color-theme-sanityinc-tomorrow github-modern-theme kaolin-themes swiper ob-julia-vterm ob-ess-julia nordic-night-theme matlab-mode htmlize doom-modeline command-log-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; EXWM setup
+;; adapted from Arch Wiki and System Crafters
+(use-package exwm :ensure t)
+;; These keys should always pass through to Emacs
+  (setq exwm-input-prefix-keys
+    '(?\C-x
+      ?\C-u
+      ?\C-h
+      ?\M-x
+      ?\M-`
+      ?\M-&
+      ?\M-:
+      ?\C-\M-j  ;; Buffer list
+      ?\C-\ ))  ;; Ctrl+Space
+
+  ;; Ctrl+Q will enable the next key to be sent directly
+  (define-key exwm-mode-map [?\C-q] 'exwm-input-send-next-key)
