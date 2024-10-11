@@ -179,3 +179,4 @@ path=('/home/mitchell/.juliaup/bin' $path)
 export PATH
 
 # <<< juliaup initialize <<<
+. "$HOME/.cargo/env"
